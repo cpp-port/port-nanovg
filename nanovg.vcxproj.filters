@@ -30,6 +30,9 @@
     <ClCompile Include="nanovg_gl3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="throw_exception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="nanovg.def">
