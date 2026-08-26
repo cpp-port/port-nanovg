@@ -150,7 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="nanovg\src\nanovg.c" />
+    <ClCompile Include="nanovg.c" />
     <ClCompile Include="nanovg_gl3.c" />
     <ClCompile Include="throw_exception.cpp" />
   </ItemGroup>

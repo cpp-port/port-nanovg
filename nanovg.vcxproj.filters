@@ -24,14 +24,14 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="nanovg\src\nanovg.c">
+    <ClCompile Include="throw_exception.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="nanovg.c">
       <Filter>Source Files\nanovg\src</Filter>
     </ClCompile>
     <ClCompile Include="nanovg_gl3.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="throw_exception.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\nanovg</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

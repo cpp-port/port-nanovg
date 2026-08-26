@@ -1,1 +1,1 @@
-../nanovg/src/nanovg_gl.h
+../nanovg_gl.h
