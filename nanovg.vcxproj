@@ -123,13 +123,6 @@
       <AdditionalDependencies>freetype.lib;glad.lib;$(CoreLibraryDependencies);%(AdditionalDependencies)</AdditionalDependencies>
       <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
     </Link>
-    <CustomBuildStep>
-      <Command>copy $(TargetPath) $(TimeDir)$(PlatformName)\$(Configuration)\$(TargetName)$(TargetExt)</Command>
-    </CustomBuildStep>
-    <CustomBuildStep>
-      <Outputs>$(TimeDir)$(PlatformName)\$(Configuration)\$(TargetName)$(TargetExt)</Outputs>
-      <Inputs>$(OutDir)$(TargetName)$(TargetExt)</Inputs>
-    </CustomBuildStep>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -162,6 +155,10 @@
     <ClInclude Include="nanovg\src\nanovg_gl.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Target Name="DeployNanoVG" AfterTargets="Build" Condition="'$(ConfigurationType)' == 'DynamicLibrary'">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(TimeDir)$(PlatformName)\$(Configuration)\" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(TimeDir)$(PlatformName)\$(Configuration)\" SkipUnchangedFiles="true" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+  </Target>
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
 </Project>
